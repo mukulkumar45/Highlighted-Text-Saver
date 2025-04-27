@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Text Saver",
+    "version": "1.0",
+    "description": "Save any task that you will highlight on a web page",
+    "permissions": ["storage", "activeTab", "scripting", "contextMenus"],
+    "background": {
+      "service_worker": "apiIntegration.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup/popup.html",
+      "default_icon": {
+        "16": "image.png",
+        "48": "image.png",
+        "128": "image.png"
+      }
+    }
+  }
+  
